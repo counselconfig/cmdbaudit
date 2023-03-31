@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+  
+{% block title %}Add New Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/update/{{employee.id}}">  
+    {% csrf_token %}  
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update Details</h3>  
+        </div> 
+        <div class="mb-3"> 
+            <label>Employee ID:</label>  
+            <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ employee.id }}"/>    
+        </div> 
+        <div class="mb-3"> 
+            <label>Reference Number:</label>  
+            <input type="text" class="form-control" name="Reference_No" id="Reference_No" required maxlength="8" value="{{ employee.Reference_No }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Serial Number:</label>  
+            <input type="text" class="form-control" name="Serial_No" id="Serial_No" required maxlength="15" value="{{ employee.Serial_No }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CMDB Item Type:</label>  
+            <input type="text" class="form-control" name="CMDB_item_type" id="CMDB_item_type" required maxlength="254" value="{{ employee.CMDB_item_type }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Name:</label>  
+            <input type="text" class="form-control" name="User_name" id="User_name" required maxlength="100" value="{{ employee.User_name }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Email:</label>  
+            <input type="email" class="form-control" name="Email_address" id="Email_address" required maxlength="254" value="{{ employee.Email_address }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Organisation:</label>  
+            <input type="text" class="form-control" name="Organisation" id="Organisation" required maxlength="15" value="{{ employee.Organisation }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-success btn-lg">Update</button>  
+        </div> 
+
+    </div>  
+    </form>  
+{% endblock content %}  

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+  
+{% block title %}Add New Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">    
+    <form method="POST" class="post-form" action="/addnew">  
+    {% csrf_token %}  
+    <div class="container">  
+        <div class="col-12">  
+        <h3>Enter Details</h3>  
+        </div>    
+     
+        <div class="mb-3"> 
+            <label>Reference No:</label>  
+            {{ form.Reference_No }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Serial No:</label>  
+            {{ form.Serial_No }}   
+        </div>
+        <div class="mb-3"> 
+            <label>CMDB item type:</label>  
+            {{ form.CMDB_item_type }}   
+        </div>  
+        <div class="mb-3"> 
+            <label>User name:</label>  
+            {{ form.User_name }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Email address:</label>  
+            {{ form.Email_address}}   
+        </div>  
+        <div class="mb-3"> 
+            <label>Organisation:</label>  
+            {{ form.Organisation }}   
+        </div>
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-primary">Submit</button>    
+        </div> 
+    </div>  
+    </form>  
+</div> 
+{% endblock content %} 
